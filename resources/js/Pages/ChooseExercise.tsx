@@ -3,9 +3,7 @@ import ExerciseCard from "@/Components/ExerciseCard";
 import BenchPress from "@/Components/Vectors/BenchPress";
 import BicepCurl from "@/Components/Vectors/BicepCurl";
 import Squat from "@/Components/Vectors/Squat";
-import { Head, Link } from "@inertiajs/react";
-
-const pageTitle = "Which exercise?";
+import { Link } from "@inertiajs/react";
 
 const ChooseExercise = () => {
     const exercises = [
@@ -32,25 +30,18 @@ const ChooseExercise = () => {
     ];
 
     return (
-        <>
-            <Head title={pageTitle} />
-            <CardGrid>
-                {exercises.map(({ id, name, vector }) => {
-                    return (
-                        <Link
-                            href={`/exercise?id=${id}`}
-                            key={id}
-                            className="flex"
-                        >
-                            <ExerciseCard title={name}>{vector}</ExerciseCard>
-                        </Link>
-                    );
-                })}
-            </CardGrid>
-        </>
+        <CardGrid>
+            {exercises.map(({ id, name, vector }) => {
+                return (
+                    <Link href={`/exercise?id=${id}`} key={id} className="flex">
+                        <ExerciseCard title={name}>{vector}</ExerciseCard>
+                    </Link>
+                );
+            })}
+        </CardGrid>
     );
 };
 
-ChooseExercise.title = pageTitle;
+ChooseExercise.title = "Which exercise?";
 
 export default ChooseExercise;

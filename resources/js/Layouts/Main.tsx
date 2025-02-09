@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, usePage } from "@inertiajs/react";
+import { Head, Link, usePage } from "@inertiajs/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ROUTES } from "@/constants";
 
@@ -20,6 +20,7 @@ const Main: React.FC<Props> = ({ title, children }) => {
 
     return (
         <>
+            <Head title={title} />
             <div className="flex items-center justify-center w-screen h-screen bg-gradient-to-tr from-pink-400 to-indigo-500 font-[Rubik]">
                 <AnimatePresence mode="popLayout">
                     <motion.div

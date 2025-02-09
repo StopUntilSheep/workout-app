@@ -1,11 +1,10 @@
 <?php
 
+use App\Http\Controllers\ChooseWorkoutController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('ChooseWorkout');
-});
+Route::get('/', [ChooseWorkoutController::class, 'index']);
 
 Route::get('/choose-exercise', function () {
     return Inertia::render('ChooseExercise');
